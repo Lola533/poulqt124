@@ -27,6 +27,53 @@ function play(connection, message) {
 var servers = {};
 
 bot.on('message', message => {
+    if (message.author.equals(bot.user)) return;
+
+    if(!message.content.startsWith(prefix)) return;
+
+    var args = message.substring(prefix.length).split(" ")
+
+    switch (args[0].toLowerCase()) {
+        case "play":
+            if(!args[1]) {
+               message.channel.sendMessage("Veuillez  mettre un lien youtube");
+               return;
+            }
+    
+            if (!message.member.voiceChannel) {
+                message.channel.sendMessage("Vous devez être dans un channel pour faire cette commande");
+                return;
+    
+    
+    
+        }
+    
+        if(!servers[message.guild.id]) servers[message.guild.id] = {
+        queue: []
+        };
+    
+    
+        var server = servers[message.guild.id];
+    
+        server.queue.push([1]);
+    
+        if(!message.member.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+        play(connection, message);
+        });
+        break;
+        case "skip":
+        var server = servers[message.guild.id];
+    
+        if (server.dispatcher) server.dispatcher.end();
+        break;
+        case "stop":
+        var server = servers[message.guild.id];
+        
+        if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+        break;
+        default:
+        message.channel.sendMessage("Erreur de commande, Réesayer")
+    };
 
     if (message.content === prefix + "help"){
         var embed = new Discord.RichEmbed()
@@ -58,45 +105,3 @@ bot.on('message', message => {
     }
    
 });
-
-switch (args[0].toLowerCase()) {
-    case "play":
-        if(!args[1]) {
-           message.channel.sendMessage("Veuillez  mettre un lien youtube");
-           return;
-        }
-
-        if (!message.member.voiceChannel) {
-            message.channel.sendMessage("Vous devez être dans un channel pour faire cette commande");
-            return;
-
-
-
-    }
-
-    if(!servers[message.guild.id]) servers[message.guild.id] = {
-    queue: []
-    };
-
-
-    var server = servers[message.guild.id];
-
-    server.queue.push([1]);
-
-    if(!message.member.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-    play(connection, message);
-    });
-    break;
-    case "skip":
-    var server = servers[message.guild.id];
-
-    if (server.dispatcher) server.dispatcher.end();
-    break;
-    case "stop":
-    var server = servers[message.guild.id];
-    
-    if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-    break;
-    default:
-    message.channel.sendMessage("Erreur de commande, Réesayer")
-};
