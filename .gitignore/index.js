@@ -22,8 +22,7 @@ bot.on('message', message => {
 
     if (message.content === prefix + "ip"){
         var embed = new Discord.RichEmbed()
-            .setTitle("Ip")
-            .addField("Site", "Bientot", true)
+            .addField("Ip", "Bientot", true)
             .addField("Port", "Bientot", true)
             .addField("Status", "Ouvert, Whitelist", true)
             .setColor("#2EFE2E")
