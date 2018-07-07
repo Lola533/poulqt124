@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Disco= require('discord.js');
 const bot = new Discord.Client();
 const YTDL = require("ytdl-core");
 
