@@ -17,7 +17,7 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
                 .setTitle("Commandes")
                 .addField("z.ip", "z.info", true)
-                .addFiel("mute/demute", true)
+                .addField("mute/demute", true)
                 .setColor("#2EFE2E")
             message.channel.sendEmbed(embed)
         }
