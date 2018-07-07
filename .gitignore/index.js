@@ -1,4 +1,4 @@
-const Disco= require('discord.js');
+const Discord = require('discord.js');
 const bot = new Discord.Client();
 const YTDL = require("ytdl-core");
 
@@ -9,7 +9,7 @@ bot.on('ready', function() {
     console.log("le bot est bien connecter");
 });
 
-bot.login(process.env.TOKEN);
+bot.login(process.env.TOKEN)
 
 function play(connection, message) {
       var server = servers[message.guild.id];
@@ -22,6 +22,7 @@ function play(connection, message) {
           if (server.queue[0])  play(connection, message);
           else connection.disconnect();    
      });
+
     }
 
 
@@ -33,7 +34,7 @@ bot.on('message', message => {
 
     if(!message.content.startsWith(prefix)) return;
 
-    var args = message.substring(prefix.length).split(" ")
+    var args = message.content.substring(prefix.length).split("")
 
     switch (args[0].toLowerCase()) {
         case "play":
@@ -52,7 +53,7 @@ bot.on('message', message => {
     
         if(!servers[message.guild.id]) servers[message.guild.id] = {
         queue: []
-        };
+        }
     
     
         var server = servers[message.guild.id];
@@ -75,7 +76,10 @@ bot.on('message', message => {
         break;
         default:
         message.channel.sendMessage("Erreur de commande, Réesayer")
-    };
+    }
+});
+
+bot.on('message', message => {
 
     if (message.content === prefix + "help"){
         var embed = new Discord.RichEmbed()
@@ -87,7 +91,8 @@ bot.on('message', message => {
 
     if (message.content === prefix + "ip"){
         var embed = new Discord.RichEmbed()
-            .addField("Ip", "Bientot", true)
+            .setTitle("Ip")
+            .addField("", "Bientot", true)
             .addField("Port", "Bientot", true)
             .addField("Status", "Ouvert, Whitelist", true)
             .setColor("#2EFE2E")
@@ -98,7 +103,7 @@ bot.on('message', message => {
          var embed = new Discord.RichEmbed()
              .setTitle("Info")
              .setDescription("Reseaux")
-             .addField("Site", "Bientot..", true)
+             .addField("Site", "https://zeldoria-network.jimdosite.com/", true)
              .addField("Twitter", "https://mobile.twitter.com/ZeldoriaMCPE", true)
              .addField("Youtube", "https://www.youtube.com/channel/UCwx3328ntu7rCS6N_f5oBFQ", true)
              .setColor("0x0000FF")
