@@ -16,7 +16,8 @@ bot.on('message', message => {
     if (message.content === prefix + "help"){
         var embed = new Discord.RichEmbed()
                 .setTitle("Commandes")
-                .addField("z.ip", "z.info", "mute/demute" true)
+                .addField("z.ip", "z.info", true)
+                .addFiel("mute/demute", true)
                 .setColor("#2EFE2E")
             message.channel.sendEmbed(embed)
         }
