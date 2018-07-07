@@ -87,8 +87,7 @@ bot.on('message', message => {
 
     if (message.content === prefix + "ip"){
         var embed = new Discord.RichEmbed()
-            .setTitle("Ip")
-            .addField("", "Bientot", true)
+            .addField("Ip", "Bientot", true)
             .addField("Port", "Bientot", true)
             .addField("Status", "Ouvert, Whitelist", true)
             .setColor("#2EFE2E")
@@ -99,7 +98,7 @@ bot.on('message', message => {
          var embed = new Discord.RichEmbed()
              .setTitle("Info")
              .setDescription("Reseaux")
-             .addField("Site", "https://zeldoria-network.jimdosite.com/", true)
+             .addField("Site", "Bientot..", true)
              .addField("Twitter", "https://mobile.twitter.com/ZeldoriaMCPE", true)
              .addField("Youtube", "https://www.youtube.com/channel/UCwx3328ntu7rCS6N_f5oBFQ", true)
              .setColor("0x0000FF")
