@@ -34,8 +34,7 @@ bot.on('message', message => {
 
     if(!message.content.startsWith(prefix)) return;
 
-    var args = message.content.substring(prefix.length).split("")
-
+    var args 
     switch (args[0].toLowerCase()) {
         case "play":
             if(!args[1]) {
