@@ -10,10 +10,6 @@ bot.on('ready', function() {
 
 bot.login(process.env.TOKEN)
 
-
-bot.login("NDI4NTcwOTU1OTMwMTQwNjc0.DiJteA.bQI1ztkCA1kdAhp5lX43UMzusJg")
-
-
 bot.on('message', message => {
 
     if (message.content === prefix + "help"){
