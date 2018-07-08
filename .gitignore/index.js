@@ -11,6 +11,9 @@ bot.on('ready', function() {
 bot.login(process.env.TOKEN)
 
 
+bot.login("NDI4NTcwOTU1OTMwMTQwNjc0.DiJteA.bQI1ztkCA1kdAhp5lX43UMzusJg")
+
+
 bot.on('message', message => {
 
     if (message.content === prefix + "help"){
@@ -41,7 +44,7 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
     if (message.content.startsWith(prefix + "mute")) {
-     if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.sendMessage("Vous n'avez pas les permission")
+     if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.channel.sendMessage("Vous n'avez pas les permission")
 
      if(message.mentions.users.size === 0) {
          return message.channel.send("Vous devez mentionner un Utilisateur")
@@ -52,14 +55,14 @@ bot.on('message', message => {
          return message.channel.send("Je n'ai pas trouver l'utilisateur ou il n'existe pas")
      }
 
-     if(!message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas les permission requise pour mute cette utilisateur");
+     if(!message.guild.member(bot.user).hasPermission("MUTE_MEMBERS")) return message.channel.send("Je n'ai pas les permission requise pour mute cette utilisateur");
      message.channel.overwritePermissions(mute, {SEND_MESSAGES: false}).then(member => {
-         message.channel.send('${mute.user.username} est mute');
+         message.channel.send('Cette personne est mute');
      })
     }
 
     if (message.content.startsWith(prefix + "demute")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.sendMessage("Vous n'avez pas les permission")
+        if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.channel.sendMessage("Vous n'avez pas les permission")
    
         if(message.mentions.users.size === 0) {
             return message.channel.send("Vous devez mentionner un Utilisateur")
@@ -70,9 +73,9 @@ bot.on('message', message => {
             return message.channel.send("Je n'ai pas trouver l'utilisateur ou il n'existe pas")
         }
    
-        if(!message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas les permission requise pour mute cette utilisateur");
+        if(!message.guild.member(bot.user).hasPermission("MUTE_MEMBERS")) return message.channel.send("Je n'ai pas les permission requise pour mute cette utilisateur");
         message.channel.overwritePermissions(mute, {SEND_MESSAGES: true}).then(member => {
-            message.channel.send('${mute.user.username} est unmute');
+            message.channel.send('Cette personne a été unmute');
         })
        }
       
