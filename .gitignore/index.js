@@ -17,7 +17,6 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
                 .setTitle("Commandes")
                 .addField("z.ip", "z.info", true)
-                .addField("mute", "demute", true)
                 .setColor("#2EFE2E")
             message.channel.sendEmbed(embed)
         }
@@ -42,7 +41,7 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
     if (message.content.startsWith(prefix + "mute")) {
-     if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.sendMessage("Vous n'avez pas les permission")
+     if(!message.guild.member("Natan").getName("Nathan")) return message.channel.sendMessage("Vous n'avez pas les permission")
 
      if(message.mentions.users.size === 0) {
          return message.channel.send("Vous devez mentionner un Utilisateur")
@@ -55,12 +54,12 @@ bot.on('message', message => {
 
      if(!message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas les permission requise pour mute cette utilisateur");
      message.channel.overwritePermissions(mute, {SEND_MESSAGES: false}).then(member => {
-         message.channel.send('${mute.user.username} est mute');
+         message.channel.send('Cette personne  est mute');
      })
     }
 
     if (message.content.startsWith(prefix + "demute")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.sendMessage("Vous n'avez pas les permission")
+        if(!message.guild.member(message.author).getName("Nathan")) return message.channel.sendMessage("Vous n'avez pas les permission")
    
         if(message.mentions.users.size === 0) {
             return message.channel.send("Vous devez mentionner un Utilisateur")
