@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.);
 const bot = new Discord.Client();
 
 var prefix = ("z.")
@@ -72,7 +72,7 @@ bot.on('message', message => {
    
         if(!message.guild.member(bot.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas les permission requise pour mute cette utilisateur");
         message.channel.overwritePermissions(mute, {SEND_MESSAGES: true}).then(member => {
-            message.channel.send('${mute.user.username} est unmute')
+            message.channel.send('${mute.user.username} est unmute');
         })
        }
       
