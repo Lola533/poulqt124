@@ -17,6 +17,8 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
                 .setTitle("Commandes")
                 .addField("z.ip", "z.info", true)
+                .addField("z.demute", "z.mute", true)
+                .addField("z.ping", "z.kick(soon)", true)
                 .setColor("#2EFE2E")
             message.channel.sendEmbed(embed)
         }
@@ -30,6 +32,11 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed)
     }
 
+    if(message.content === prefix + "ping")
+    message.reply("Pong 🏓 ! " + message.createdTimestamp - Date.now())
+
+}
+       
     if (message.content === prefix + "info"){
          var embed = new Discord.RichEmbed()
              .setTitle("Info")
