@@ -37,7 +37,7 @@ bot.on('message', message => {
     }
     
     if (message.content === prefix + "kick"){
-        message.channel.sendMessage("Cette commande est en dev comme zeldoria elle n'ouvrira jamais");
+        message.channel.sendMessage("Cette commande est en dev");
     }
     
     if (message.content === prefix + "info"){
