@@ -38,7 +38,8 @@ bot.on('message', message => {
     
     if (message.content === prefix + "kick"){
         message.channel.sendMessage("Cette commande est en dev comme zeldoria elle n'ouvrira jamais");
-
+    }
+    
     if (message.content === prefix + "info"){
          var embed = new Discord.RichEmbed()
              .setTitle("Info")
