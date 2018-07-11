@@ -48,7 +48,8 @@ bot.on('message', message => {
     }
 
     if (message.content === prefix + "kick"){
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
+        let modRole = message.guild.roles.find("name", "Dev-kik");
+        if(!message.member.roles.has(modRole.id)) {
             return message.reply("Vous n'avez pas la permission").catch(console.error);
         }
         if (message.mentions.users.size === 0) {
