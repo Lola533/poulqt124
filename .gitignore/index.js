@@ -18,7 +18,7 @@ bot.on('message', message => {
                 .setTitle("Commandes")
                 .addField("z.ip", "z.info", true)
                 .addField("z.mute", "z.demute", true)
-                .addField("z.ping", "z.kick", true)
+                .addField("z.ping", "z.kick(soon)", true)
                 .setColor("#2EFE2E")
             message.channel.sendEmbed(embed)
         }
@@ -48,8 +48,7 @@ bot.on('message', message => {
     }
 
     if (message.content === prefix + "kick"){
-        let modRole = message.guild.roles.find("name", "🎃🎄Fondateurs🎃🎄");
-        if(!message.member.roles.has(modRole.id)) {
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
             return message.reply("Vous n'avez pas la permission").catch(console.error);
         }
         if (message.mentions.users.size === 0) {
