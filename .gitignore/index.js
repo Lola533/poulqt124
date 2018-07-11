@@ -54,7 +54,7 @@ bot.on('message', message => {
         if (message.mentions.users.size === 0) {
             return message.reply("Veuillez mentionnez un utilisateur").catch(console.error);
         }
-        let kickMember = message.guild.member(message.mentions.users.first())
+        let kickMember = message.guild.member(message.mentions.users.first());
         if(!kickMember){
             return message.reply("[Error] Sois l'utilisation est impossible a kick sois vous l'avez mal mentionner");
         }
