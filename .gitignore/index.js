@@ -35,11 +35,7 @@ bot.on('message', message => {
     if (message.content === prefix + "ping"){
        message.channel.sendMessage('Syncronisation avec le serveur: `' + `${message.createdTimestamp - Date.now()}` + ' ms`');
     }
-    
-    if (message.content === prefix + "kick"){
-        message.channel.sendMessage("Cette commande est en dev");
-    }
-    
+
     if (message.content === prefix + "info"){
          var embed = new Discord.RichEmbed()
              .setTitle("Info")
@@ -50,6 +46,27 @@ bot.on('message', message => {
              .setColor("0x0000FF")
         message.channel.sendEmbed(embed);
     }
+
+    if (message.content === prefix + "kick"){
+        let modRole = message.guild.roles.find("name", "🎃🎄Fondateurs🎃🎄");
+        if(!message.member.roles.has(modRole.id)) {
+            return message.reply("Vous n'avez pas la permission").catch(console.error);
+        }
+        if (message.mentions.users.size === 0) {
+            return message.reply("Veuillez mentionnez un utilisateur").catch(console.error);
+        }
+        let kickMember = message.guild.member(message.mentions.users.first())
+        if(!kickMember){
+            return message.reply("[Error] Sois l'utilisation est impossible a kick sois vous l'avez mal mentionner");
+        }
+        kickMember.kick().then(member => {
+            message.reply(`${member.user.username} a été expulser  YOUPII`).catch(console.error);
+            message.guild.channels.find("name", "général-staff🌐").send(`**${member.user.username} a été kick par **${member.author.username}**`);
+        })
+
+    }
+
+
     if (message.content.startsWith(prefix + "mute")) {
      if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.sendMessage("Vous n'avez pas les permission")
 
