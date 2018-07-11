@@ -61,7 +61,7 @@ bot.on('message', message => {
         kickMember.kick().then(member => {
             message.reply(`${member.user.username} a été expulser  YOUPII`).catch(console.error);
             message.guild.channels.find("name", "général-staff🌐").send(`**${member.user.username} a été kick par **${member.author.username}**`);
-        })
+        }).catch(console.error)
 
     }
 
