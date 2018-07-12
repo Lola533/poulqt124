@@ -32,7 +32,7 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed)
     }
     
-    if ( message . content  === préfixe +  "adaptemonskin" ) {
+    if ( message . content  === préfixe + "adaptemonskin"){
         message.channel.sendMessage("Heum ca va etre compliquer louuuuu");
     }
 
