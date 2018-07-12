@@ -34,6 +34,7 @@ bot.on('message', message => {
     
     if ( message . content  === préfixe +  "adaptemonskin" ) {
         message.reply("Heum ca va etre compliquer louuuuu")
+    }
 
     if (message.content === prefix + "ping"){
        message.channel.sendMessage('Syncronisation avec le serveur: `' + `${message.createdTimestamp - Date.now()}` + ' ms`');
