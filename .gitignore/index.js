@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 var prefix = ("z.")
 
 bot.on('ready', function() {
-    bot.user.setGame("aide : z.help");
+    bot.user.setGame("z.help║ZeldoriaNetwork║By !(Emile)#4231");
     console.log("le bot est bien connecter");
 });
 
