@@ -25,8 +25,6 @@ bot.on('message', message => {
 
     if (message.content === prefix + "ip"){
         var embed = new Discord.RichEmbed() 
-            .addField("Ip", "srv2.secure-heberg.com", true)
-            .addField("Port", "10187", true)
             .addField("Status", "Ouvert, Whitelist", true)
             .setColor("#2EFE2E")
         message.channel.sendEmbed(embed)
