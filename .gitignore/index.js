@@ -18,7 +18,7 @@ bot.on('message', message => {
                 .setTitle("Commandes")
                 .addField("z.ip", "z.info", true)
                 .addField("z.mute", "z.demute", true)
-                .addField("z.ping", "z.kick(soon)", true)
+                .addField("z.ping", "z.kick(jamais)", true)
                 .setColor("#2EFE2E")
             message.channel.sendEmbed(embed)
         }
