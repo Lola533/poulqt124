@@ -46,7 +46,6 @@ bot.on('message', message => {
              .setColor("0x0000FF")
         message.channel.sendEmbed(embed);
     }
-
     if (message.content === prefix + "kick"){
         let kickMember = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!kickMember) return message.channel.send("Utilisateur introuvable");
@@ -58,7 +57,7 @@ bot.on('message', message => {
         .setDescription("__Kick__")
         .setColor("0x0000FF")
         .addField("Kick User", `${kickMember}`)
-        .addField("Kicked by", `<@${message.author.id}`)
+        .addField("Kicked by", `@${message.author.id}`)
         .addField("Reason", kReason);
 
         let kickChannel = message.guild.channels.find(`name`, "logs");
@@ -69,7 +68,6 @@ bot.on('message', message => {
 
       return;
     }
-
 
     if (message.content.startsWith(prefix + "mute")) {
      if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.sendMessage("Vous n'avez pas les permission")
