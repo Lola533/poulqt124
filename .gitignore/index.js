@@ -64,7 +64,7 @@ bot.on('message', message => {
         let kickChannel = message.guild.channels.find(`name`, "logs");
         if(!kickChannel) return message.channel.send("Ce channel n'existe pas");
 
-        message.guild.member(kickMember).kick(kReason)
+        message.guild.member(kickMember).kick(kReason);
         kickChannel.send(kickEmbed);
 
       return;
