@@ -48,22 +48,26 @@ bot.on('message', message => {
     }
 
     if (message.content === prefix + "kick"){
-        let modRole = message.guild.roles.find("name", "Dev-kik");
-        if(!message.member.roles.has(modRole.id)) {
-            return message.reply("Vous n'avez pas la permission").catch(console.error);
-        }
-        if (message.mentions.users.size === 0) {
-            return message.reply("Veuillez mentionnez un utilisateur").catch(console.error);
-        }
         let kickMember = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!kickMember){
-            return message.reply("[Error] Sois l'utilisation est impossible a kick sois vous l'avez mal mentionner");
-        }
-        kickMember.kick().then(member => {
-            message.reply(`${member.user.username} a été expulser  YOUPII`).catch(console.error);
-            message.guild.channels.find("name", "général-staff🌐").send(`**${member.user.username} a été kick par **${member.author.username}**`)
-        }).catch(console.error);
+        if(!kickMember) return message.channel.send("Utilisateur introuvable");
+        let kReason = args.join(" ").slice(22);
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("je ne peut pas le faire");
+        if(kUser.hasPermission(MANAGE_MESSAGE)) return message.channel.send("Cette personne ne peut pas etre kick");
 
+        let kickEmbed = new Discord.RichEmbed()
+        .setDescription("__Kick__")
+        .setColor("0x0000FF")
+        .addField("Kick User", `${kickMember}`)
+        .addField("Kicked by", `<@${message.author.id}`)
+        .addField("Reason", kReason);
+
+        let kickChannel = message.guild.channels.find(`name`, "logs");
+        if(!kickChannel) return message.channel.send("Ce channel n'existe pas");
+
+        message.guild.member(kickMember).kick(kReason)
+        kickChannel.send(kickEmbed);
+
+      return;
     }
 
 
