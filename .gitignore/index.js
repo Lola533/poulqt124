@@ -55,14 +55,14 @@ bot.on('message', message => {
         if (message.mentions.users.size === 0) {
             return message.reply("Veuillez mentionnez un utilisateur").catch(console.error);
         }
-        let kickMember = message.guild.member(message.mentions.users.first());
+        let kickMember = message.guild.member(message.mentions.users.first() || );
         if(!kickMember){
             return message.reply("[Error] Sois l'utilisation est impossible a kick sois vous l'avez mal mentionner");
         }
         kickMember.kick().then(member => {
             message.reply(`${member.user.username} a été expulser  YOUPII`).catch(console.error);
             message.guild.channels.find("name", "général-staff🌐").send(`**${member.user.username} a été kick par **${member.author.username}**`)
-        }).catch(console.error)
+        }).catch(console.error);
 
     }
 
