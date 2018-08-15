@@ -18,7 +18,7 @@ bot.on('message', message => {
                 .setTitle("Commandes")
                 .addField("z.ip", "z.info", true)
                 .addField("z.mute", "z.demute", true)
-                .addField("z.ping", "z.kick(jamais)", true)
+                .addField("z.ping", "z.num", true)
                 .setColor("#2EFE2E")
             message.channel.sendEmbed(embed)
         }
@@ -103,6 +103,10 @@ bot.on('message', message => {
         message.channel.overwritePermissions(mute, {SEND_MESSAGES: true}).then(member => {
             message.channel.send('Cette personne a été unmute');
         })
+       }
+    
+           if (message.content.startsWith(prefix + "num")) {
+           return message.channel.send("Mon numéro de téléphone est le: 06597078** A VOUS DE DEVINEZ MDR")
        }
       
    });
