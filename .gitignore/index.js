@@ -952,4 +952,4 @@ myRainbow.setColor("RANDOM").catch(e => {});
    
 });
 
-bot.login('NDgyOTk2ODkzNTQzMzAxMTQx.Dmw0UA.FDYfT3TQBv59dj9EQedLcrG3jmY')
+bot.login(process.env.TOKEN)
