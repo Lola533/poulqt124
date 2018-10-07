@@ -1,19 +1,15 @@
 {
-  "name": "zeldoriabot",
+  "name": "test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "discord.js": "^11.3.2"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "bot"
-  },
-  "author": "Emile971",
-  "license": "ISC"
+  "author": "DumpMan",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "got": "^9.1.0"
+  }
 }
