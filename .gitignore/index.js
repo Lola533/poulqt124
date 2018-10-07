@@ -801,7 +801,7 @@ message.delete();
           var help_embed = new Discord.RichEmbed()
  
     .setTitle(">>> Ajouter Kanna army <<<")
-    .addField("Bot Invitation")
+    .addField("Bot Invitation","[CLIQUER ICI](https://discordapp.com/oauth2/authorize?client_id=482996893543301141&scope=bot&permissions=8)")
     .setColor("#320242")
     .setImage('https://images-ext-2.discordapp.net/external/NYKapoNyFuvHyEN9pfZ_RpQc3o_sIHPwdbEa8bALjGE/https/media.giphy.com/media/vwFJbT5uIBNja/giphy.gif?width=400&height=225')
     .setThumbnail(sicon)
@@ -887,6 +887,7 @@ message.delete();
                  if (!mesage.author.id === "279697055507546113" && "478640425976987650")
       return message.channel.send(" Vous n'avez pas la permission d'utiliser cette commande.")
         message.channel.send(":arrows_counterclockwise:  Redemarrage en cours...");
+        loadCmds()
       }
       else if (["createinvite"].includes(command)) {
         message.delete();
