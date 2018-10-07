@@ -676,12 +676,12 @@ message.delete();
                 if (member.bot) {
                     champ_additions[champ_additions.length] = "Robot"
                 } else if (member.id === "478640425976987650" || member.id === "478640425976987650") {
-                    champ_additions[champ_additions.length] = " Apprentisage programation\n Permissions : Administrateur"
+                    champ_additions[champ_additions.length] = " Chef du bot\n Permissions : Administrateur"
                 };
                
                 if (member.bot) {
                     champ_additions[champ_additions.length] = "439758410561486848"               } else if (member.id === "329321891707748355" || member.id === "279697055507546113") {
-                    champ_additions[champ_additions.length] = ":bank: Role Developpeur  Createur\n :trident: Permissions : Administrateur"
+                    champ_additions[champ_additions.length] = ":bank: Role Developpeur  Createur\n  Permissions: Administrateur"
                 };
                
                 if (champ_additions.length > 0) {
