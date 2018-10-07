@@ -884,9 +884,9 @@ message.delete();
       }
                 else if (["reload"].includes(command)) {
               message.delete();
-                 if (!mesage.author.id === "279697055507546113" && "478640425976987650")
-      return message.channel.send(" Vous n'avez pas la permission d'utiliser cette commande.")
-        message.channel.send(":arrows_counterclockwise:  Redemarrage en cours...");
+                 if (!mesage.author.id === "478640425976987650" && "279697055507546113")
+      return message.channel.sendMessage(" Vous n'avez pas la permission d'utiliser cette commande.")
+        message.channel.sendMessage(":arrows_counterclockwise:  Redemarrage en cours...");
         loadCmds()
       }
       else if (["createinvite"].includes(command)) {
