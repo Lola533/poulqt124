@@ -546,7 +546,7 @@ bot.channels.find('id',"476680557980549120").send(serverembed);
            
 
             if (["advert"].includes(command)) {
-    if(!message.member.hasPermission("ADMINISTRATOR") )
+    if(!message.member.hasPermission("MANAGE_MESSAGES") )
       return message.reply("Desole mais vous n'avez pas les droits necessaires pour utiliser cette commande.");
       const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
       const sayMessage = args.join(" ");
@@ -721,7 +721,7 @@ message.delete();
         .setFooter("Demande par "+ message.author.username, message.author.avatarURL)
         .setThumbnail(bot.user.avatarURL)
         .setFooter("Demande par "+ message.author.username, message.author.avatarURL);
-        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(role_erreur).catch(e => {});
+        if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send(role_erreur).catch(e => {});
       if(message.guild.roles.exists("name", roledebut)) {
           message.channel.send(role_succes)
           message.guild.members.forEach(member => {
@@ -745,7 +745,7 @@ message.delete();
         .addField(":x:", "**:x: Vous devez avoir des droits administrateurs pour effectuer cette commande.**")
         .setThumbnail(bot.user.avatarURL)
         .setFooter("Demande par "+ message.author.username, message.author.avatarURL);
-        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(role_erreur).catch(e => {});
+        if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send(role_erreur).catch(e => {});
       if(message.guild.roles.exists("name", roledebut)) {
           message.channel.send(role_succes)
           message.guild.members.forEach(member => {
@@ -801,11 +801,11 @@ message.delete();
           var help_embed = new Discord.RichEmbed()
  
     .setTitle(">>> Ajouter Kanna army <<<")
-    .addField("Invite de Kanna ARMY v2")
+    .addField("Bot Invitation")
     .setColor("#320242")
-    .setImage('https://media.giphy.com/media/c7Ff1lH21gkwI9Dh5w/giphy.gif')
+    .setImage('https://images-ext-2.discordapp.net/external/NYKapoNyFuvHyEN9pfZ_RpQc3o_sIHPwdbEa8bALjGE/https/media.giphy.com/media/vwFJbT5uIBNja/giphy.gif?width=400&height=225')
     .setThumbnail(sicon)
-    .setURL('https://discord.gg/F9k7Qhz')
+    .setURL('https://discordapp.com/oauth2/authorize?client_id=482996893543301141&scope=bot&permissions=8')
     .setFooter("Developper par Kanna Kamui & Emile || CORPORATION 2018");
  
   message.author.sendEmbed(help_embed).catch(console.error)
@@ -831,12 +831,9 @@ message.delete();
             var help_embed = new Discord.RichEmbed()
             .setTitle("Voici les derniere mise a jour du bot :")
           .setThumbnail(sicon)
-              .addField("Mise a jour - Moderation","```Report Automatique```", true)
-              .addField("Mise a jour - Systeme","```Amelioration du systeme```", false)
-              .addField("Mise a jour - Jeux","```Ajout du jeux : 8ball```", true)
-              .addField("Mise a jour - Divers","```Documentation sur le codage.```", true)
-              .addField("Mise a jour - Bot","```optimisation du bot, Reglage des bugs majeurs qui faisais crash le bot```", true)
-              .addField("Mise a jour - �","```Caractere Speciaux ajuster !```", false)
+              .addField("Mise a jour - Jeux","```Nouveau jeux en developpement```", true)
+              .addField("Mise a jour - GIF","```Profitez desormais des kanna gif en tapant la command _gif```", true)
+              .addField("Mise a jour - Host","```Le bot est desormais sur un hebergeur !```", false)
           .setColor("#320242")
                     .setFooter("Demande par "+ message.author.username, message.author.avatarURL)
              message.channel.sendEmbed(help_embed).catch(console.error);
@@ -887,8 +884,8 @@ message.delete();
       }
                 else if (["reload"].includes(command)) {
               message.delete();
-                 if (!message.guild.member(message.author).hasPermission('ADMINISTRATOR'))
-      return message.channel.send("?   Vous n'avez pas la permission d'utiliser cette commande.")
+                 if (!mesage.author.id === "279697055507546113" && "478640425976987650")
+      return message.channel.send(" Vous n'avez pas la permission d'utiliser cette commande.")
         message.channel.send(":arrows_counterclockwise:  Redemarrage en cours...");
       }
       else if (["createinvite"].includes(command)) {
