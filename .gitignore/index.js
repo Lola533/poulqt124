@@ -884,7 +884,7 @@ message.delete();
       }
                 else if (["reload"].includes(command)) {
               message.delete();
-                 if (!mesage.author.id === "478640425976987650" && "279697055507546113")
+                 if (!message.author.id === "478640425976987650" && "279697055507546113")
       return message.channel.sendMessage(" Vous n'avez pas la permission d'utiliser cette commande.")
         message.channel.sendMessage(":arrows_counterclockwise:  Redemarrage en cours...");
         loadCmds()
