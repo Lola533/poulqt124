@@ -930,7 +930,7 @@ let i = 0;
 let interval = setInterval(function () {
 myRainbow.setColor("RANDOM").catch(e => {});
 
-}, 750)
+}, 4500)
 }
 
     else {
