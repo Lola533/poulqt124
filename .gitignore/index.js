@@ -526,7 +526,7 @@ bot.channels.find('id',"476680557980549120").send(serverembed);
 })
 });
 
- loadCmds();
+
   bot.on('message', message => {
 
  
