@@ -916,11 +916,21 @@ message.delete();
    
     }
                  
-    else if (["rainbow"].includes(command)) {
+   else if (["rainbow"].includes(command)) {
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("❌ ** Tu n'as pas la permission `ADMINISTRATEUR` ** ❌");
      
 if (!message.guild.roles.find("name", "rainbow")) return message.reply("❌ **  Le role `rainbow` n'existe pas ** ❌")
-message.reply('🌈 Role rainbow desactiver jusqua demain pour cause de machine en P.L.S! 🌈')
+message.reply('🌈 La commande est maintenant activé, il te reste juste à attribué le role ! 🌈')
+let args = message.content.split(' ')
+args.shift()
+message.delete()
+
+var myRainbow = message.guild.roles.find("name", "rainbow")
+let i = 0;
+let interval = setInterval(function () {
+myRainbow.setColor("RANDOM").catch(e => {});
+
+}, 750)
 }
 
     else {
