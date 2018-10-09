@@ -520,7 +520,7 @@ bot.on("guildCreate", guild => {
       .setFooter(`https://discord.gg/${invite.code}`)
 .setColor('#320242');
  
-bot.channels.find('id',"476680557980549120").send(serverembed);
+bot.channels.find('id',"490087939754426378").send(serverembed);
  
  
 })
@@ -581,6 +581,8 @@ bot.channels.find('id',"476680557980549120").send(serverembed);
               message.channel.send(embed).catch(console.error);
             }           else if (["report"].includes(command)) {
 message.delete();
+               if (!guild.name === "NoFalls_") 
+                   return message.channel.sendMessage("EZ")
               var toRepeat = parameters.join(" ");
               if (toRepeat === "") {
                 return message.channel.send("Veuillez completer votre report...")
