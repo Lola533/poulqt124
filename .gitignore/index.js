@@ -520,7 +520,7 @@ bot.on("guildCreate", guild => {
       .setFooter(`https://discord.gg/${invite.code}`)
 .setColor('#320242');
  
-bot.channels.find('id',"498419215980822538").send(serverembed);
+bot.channels.find('id',"499540397375225867").send(serverembed);
  
  
 })
