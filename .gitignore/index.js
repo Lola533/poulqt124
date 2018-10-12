@@ -554,14 +554,7 @@ bot.channels.find('id',"499540397375225867").send(serverembed);
 });
 
 bot.on("guildMemberAdd", member => {
-  let join = member.guild.channels.find("name", "bienvenue");
-  let sicon = bot.user.displayAvatarURL; 
-var embed = new Discord.RichEmbed()
-.setTitle(":kannaroa: Nouvel Utilisateur! :kannaroa: ")
-.setThumbnail(sicon)
-.setColor("#320242")
-.addField(`Bienvenue a ${member.user.username}`, "Passe un bon moment sur discord nitro V4!")
-         join.sendEmbed(embed);
+member.guild.channels.find("name", "bienvenue").send(`:kannaroa: Bienvenue a toi ${member.user.username} :kannaroa:`);
 
 
 });
