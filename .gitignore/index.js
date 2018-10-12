@@ -527,7 +527,6 @@ bot.channels.find('id',"499540397375225867").send(serverembed);
 });
 
 bot.on("guildMemberAdd", member => {
-  if(!guild.id === "458864695298752519") return;
 var embed = new Discord.RichEmbed()
 .setTitle("Nouvel Utilisateur!")
 .setColor("#320242")
