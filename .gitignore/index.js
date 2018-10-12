@@ -554,7 +554,7 @@ bot.channels.find('id',"499540397375225867").send(serverembed);
 });
 
 bot.on("guildMemberAdd", member => {
-member.guild.channels.find("name", "bienvenue").send(`:kannaroa: Bienvenue a toi ${member.user.username} :kannaroa:`);
+member.guild.channels.find("name", "bienvenue").send(`**:kannaroa: Bienvenue a toi ${member.user.username} :kannaroa:**`);
 
 
 });
