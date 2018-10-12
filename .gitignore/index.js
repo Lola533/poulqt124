@@ -531,7 +531,7 @@ var embed = new Discord.RichEmbed()
 .setTitle("Nouvel Utilisateur!")
 .setColor("#320242")
 .addField(`Bienvenue a ${member.user.username}`)
-  bot.channel.find("name", "bienvenue").send(embed);
+  member.guild.channel.find("name", "bienvenue").send(embed);
 
 });
 
