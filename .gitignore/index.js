@@ -41,7 +41,7 @@ if (msg.content === '_help'){
 }
 
 if (msg.content === '_request'){
-  msg.delete()
+  msg.delete();
   var toRepeat = parameters.join(" ");
               if (toRepeat === "") {
                 return message.channel.send("Veuillez completer votre demande...")
