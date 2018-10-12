@@ -62,7 +62,7 @@ if (msg.content === '_request'){
    
  
                          
-                        bot.channels.find('id',"498419215980822538").send({embed});                    
+                        bot.channels.find('id',"500374683221491752").send({embed});                    
                     message.author.send("`Votre demande a bien ete envoyer et sera traite le plus vite possible`").catch(console.error);
             }
                   
