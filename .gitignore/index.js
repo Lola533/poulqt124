@@ -40,6 +40,33 @@ if (msg.content === '_help'){
   msg.channel.send(":round_pushpin: `Un message contenant les commandes du bot vous a ete envoye !`")
 }
 
+if (msg.content === '_request'){
+  msg.delete()
+  var toRepeat = parameters.join(" ");
+              if (toRepeat === "") {
+                return message.channel.send("Veuillez completer votre demande...")
+              };
+              toRepeat = toRepeat   .replace("@everyone", "@??everyone")
+                        .replace("@here", "@??here");
+                        let sicon = message.author.displayAvatarURL;                      
+                        var embed = new Discord.RichEmbed()
+     
+                        .setTitle("Une demande vient d'etre envoye !")
+                        .addField("L'auteur du message ",message.author.tag)  
+                        .setThumbnail(sicon)
+                        .addField("Serveur du message ", message.guild.name, true)
+                        .setDescription(toRepeat)
+                        .setTimestamp()    
+                        .setColor("#320242")                              
+                        .setFooter("Developper par Kanna Kamui & Emile || CORPORATION 2018");
+   
+ 
+                         
+                        bot.channels.find('id',"498419215980822538").send({embed});                    
+                    message.author.send("`Votre demande a bien ete envoyer et sera traite le plus vite possible`").catch(console.error);
+            }
+                  
+
    
   if (msg.content === ":black_nib: Un message contenant l'invitation du bot vient d'etre envoye dans votre message prive !"){
         msg.delete()
@@ -527,13 +554,14 @@ bot.channels.find('id',"499540397375225867").send(serverembed);
 });
 
 bot.on("guildMemberAdd", member => {
+  let join = member.guild.channels.find("name", "bienvenue");
   let sicon = bot.user.displayAvatarURL; 
 var embed = new Discord.RichEmbed()
-.setTitle("Nouvel Utilisateur!")
+.setTitle(":kannaroa: Nouvel Utilisateur! :kannaroa: ")
 .setThumbnail(sicon)
 .setColor("#320242")
 .addField(`Bienvenue a ${member.user.username}`, "Passe un bon moment sur discord nitro V4!")
-  member.guild.channels.find("name", "bienvenue").sendEmbed(embed);
+         join.sendEmbed(embed);
 
 
 });
@@ -593,8 +621,6 @@ var embed = new Discord.RichEmbed()
               message.channel.send(embed).catch(console.error);
             }           else if (["report"].includes(command)) {
 message.delete();
-               if (!guild.name === "NoFalls_") 
-                   return message.channel.sendMessage("EZ")
               var toRepeat = parameters.join(" ");
               if (toRepeat === "") {
                 return message.channel.send("Veuillez completer votre report...")
