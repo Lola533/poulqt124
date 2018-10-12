@@ -527,12 +527,11 @@ bot.channels.find('id',"499540397375225867").send(serverembed);
 });
 
 bot.on("guildMemberAdd", member => {
-var join = member.guild.channels.find("name", "bienvenue");
 var embed = new Discord.RichEmbed()
 .setTitle("Nouvel Utilisateur!")
 .setColor("#320242")
-.addField(`Bienvenue a ${member.user.username}`)
-  join.send(embed);
+.addField(`Bienvenue a ${member.user.username}`, bot.user.displayAvatarURL)
+  member.guild.channels.find("name", "bienvenue").send(embed);
 
 
 });
