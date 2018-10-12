@@ -527,10 +527,12 @@ bot.channels.find('id',"499540397375225867").send(serverembed);
 });
 
 bot.on("guildMemberAdd", member => {
+  let sicon = bot.user.displayAvatarURL; 
 var embed = new Discord.RichEmbed()
 .setTitle("Nouvel Utilisateur!")
+.setThumbnail(sicon)
 .setColor("#320242")
-.addField(`Bienvenue a ${member.user.username}`, bot.user.displayAvatarURL)
+.addField(`Bienvenue a ${member.user.username}`, "Passe un bon moment sur discord nitro V4!")
   member.guild.channels.find("name", "bienvenue").sendEmbed(embed);
 
 
