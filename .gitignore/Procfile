@@ -1,1 +1,1 @@
-worker: node index
+web: npm install lowdb
