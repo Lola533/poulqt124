@@ -63,7 +63,7 @@ bot.on('message', msg => {
         .setDescription(">>>>>>Pre-Saison<<<<!")
         .addField("XP :", `${xpfinal[1]} xp`)
    msg.channel.send({embed: xp_embed});
-
+  }
 
 if (msg.content === '_blague'){
   msg.delete()
