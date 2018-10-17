@@ -51,7 +51,7 @@ bot.on('message', msg => {
    console.log(userxp);
    console.log(`Nombre d'xp : ${userxp[1]}`)
 
-  db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1]} += 1).write();
+  db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1] += 1}).write();
   }
 
   if (msg.content === prefix + "levels"){
