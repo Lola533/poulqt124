@@ -8,9 +8,6 @@ const Whatis = require('./whatis')
 const Wiki = require('./wiki')
 const Docs = require('./docs')
 const config = require("./config.json");
-const low = require('lowdb')
-const FileSync = require('lowdb/adapter/FileSync')
-const adapter = new FileSync('database.json');
 var prefix = ("_");
 bot.on('ready', function()  {
     console.log("Connecte en tant que " + bot.user.username + " | Prefix : " + prefix + " | Nombre de Serveurs "+ bot.guilds.size +" | Nombres de channels "+ bot.channels.size +" | Utilisateur totaux "+ bot.users.size +" | Nombre d'emojis totaux "+ bot.emojis.size +'');
@@ -31,40 +28,9 @@ bot.on('ready',() => {
 
 
 
-const db = low(adapter);
-
-
-db.defaults({ xp: []}).write()
  
 bot.on('message', msg => {
  
-  var msgauthor = msg.author.id;
-
-  if(msg.author.bot)return;
-
-  if(!db.get("xp").find({user: msgauthor}).value()){
-      db.get("xp").push({user: msgauthor, xp: 1}).write();
-  }else{
-   var userxpdb = db.get("xp").filter({user: msgauthor}).find("xp").value();
-   console.log(userxpdb);
-   var userxp = Object.values(userxpdb)
-   console.log(userxp);
-   console.log(`Nombre d'xp : ${userxp[1]}`)
-
-  db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1] += 1}).write();
-  }
-
-  if (msg.content === prefix + "levels"){
-    var xp = db.get("xp").filter({user: msgauthor}).find('xp').value()
-    var xpfinal = Object.values(xp);
-    var xp_embed = new Discord.RichEmbed()
-        .setColor('#33D4FF')   
-        .setTitle(`Nombre d'XP de ${msg.author.username}`)
-        .setDescription(">>>>>>Pre-Saison<<<<!")
-        .addField("XP :", `${xpfinal[1]} xp`)
-   msg.channel.send({embed: xp_embed});
-  }
-
 if (msg.content === '_blague'){
   msg.delete()
 }
