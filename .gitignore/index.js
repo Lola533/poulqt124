@@ -1,4 +1,5 @@
-
+var Discord = require("discord.js");
+bot = new Discord.Client();
 client = new Discord.Client();
 const Google = require('./google')
 const Blague = require('./blague')
