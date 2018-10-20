@@ -14,7 +14,7 @@ bot.on('ready', function()  {
     avatar = "https://cdn.discordapp.com/attachments/479379001702612993/483003684687446046/KannaArmy_1.png"
     bot.user.setAvatar(avatar);
     bot.user.setUsername("Kanna-Army")
-    bot.user.setGame("_help | Nombre de Serveurs 500 serveur");
+    bot.user.setGame("_help | Nombre de Serveurs "+ bot.guilds.size +'');
 });
 
 bot.on('ready',() => {
