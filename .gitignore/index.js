@@ -11,7 +11,7 @@ const config = require("./config.json");
 var prefix = ("_");
 bot.on('ready', function()  {
     console.log("Connecte en tant que " + bot.user.username + " | Prefix : " + prefix + " | Nombre de Serveurs "+ bot.guilds.size +" | Nombres de channels "+ bot.channels.size +" | Utilisateur totaux "+ bot.users.size +" | Nombre d'emojis totaux "+ bot.emojis.size +'');
-    avatar = "https://cdn.discordapp.com/attachments/479379001702612993/483003684687446046/KannaArmy_1.png"
+    avatar = "https://cdn.discordapp.com/attachments/494451536009887744/503228206418231296/image0.jpg"
     bot.user.setAvatar(avatar);
     bot.user.setUsername("Kanna-Army")
     bot.user.setGame("_help | Nombre de Serveurs "+ bot.guilds.size +'');
