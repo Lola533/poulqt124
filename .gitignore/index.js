@@ -978,6 +978,6 @@ myRainbow.setColor("RANDOM").catch(e => {});
       }
    
    
-});
+})
 
 bot.login(process.env.TOKEN)
