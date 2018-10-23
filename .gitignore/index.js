@@ -29,7 +29,7 @@ bot.on('ready',() => {
 
 bot.on("guildMemberAdd", member => {
  member.guild.channels.find("name", ":wave: | join").send(`Un Membre vien de rejoindre le serveur MAAISS qui est ce ???! C'est ${member} Bien sur!`);
- 
+})
 bot.on('message', msg => {
  
 if (msg.content === '_blague'){
