@@ -186,7 +186,7 @@ bot.on('message', msg => {
  return msg.author.send("Cette commande ne peut-etre executer que dans le salon #vcs !").catch(console.error)
  }
 
-if(msg.author.id === "287704598980984832" && "389409933440974858") {
+if(msg.author.id === "2873492011954995212") {
    let xoargs = msg.content.split(" ");
  xoargs.splice(0, 1);
  xoargs = xoargs.join(' ')
